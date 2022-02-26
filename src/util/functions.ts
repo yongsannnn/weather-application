@@ -60,3 +60,7 @@ export const returnImageURL = (iconId: string) => {
   const IMG_URL = process.env.REACT_APP_IMG_URL;
   return `${IMG_URL}${iconId}@2x.png`;
 };
+
+export const generateDateNow = () => {
+  return new Date().toLocaleString("en-GB", { hour12: true });
+};

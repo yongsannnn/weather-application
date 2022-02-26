@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Col, Form } from "react-bootstrap";
 import WeatherService from "../services/weatherService";
 import { AppContext } from "../context/appContext";
+import { generateDateNow } from "../util/functions";
 
 const Input = () => {
   const [cityName, setCityName] = useState("");
@@ -12,6 +13,12 @@ const Input = () => {
   const context: any = useContext(AppContext);
   const { updateCurrentData, checkHistoryData, updateHistoryData } =
     context.storeData;
+
+  const onKeyDownHandler = (e: any) => {
+    if (e.keyCode === 13) {
+      handleSend();
+    }
+  };
   const handleSend = async () => {
     if (!cityName && !countryName) {
       setHasError(true);
@@ -22,7 +29,7 @@ const Input = () => {
     setHasError(false);
     let res = await WeatherService.getWeather(cityName, countryName);
     if (res.status === 200) {
-      const thisDate = new Date().toLocaleString("en-GB", { hour12: true });
+      const thisDate = generateDateNow();
       Object.assign(res.data, { time: thisDate });
       updateCurrentData(res.data);
       updateHistoryData([...checkHistoryData, res.data]);
@@ -41,10 +48,10 @@ const Input = () => {
     <React.Fragment>
       <div className="page-width">
         <Col className="input-wrapper" sm="12">
-          <button className="reset-btn top-right" onClick={handleReset}>
+          <button className="cta-icon top-right" onClick={handleReset}>
             <i className="fas fa-sync-alt"></i>
           </button>
-          <Form className="form-row">
+          <Form className="form-row" onKeyDown={(e) => onKeyDownHandler(e)}>
             <Col sm="6">
               <Form.Control
                 type="text"

@@ -48,7 +48,6 @@ h6 {
 
 .form-row {
   display: flex;
-  flex-wrap: wrap;
   margin-right: -5px;
   margin-left: -5px;
 }
@@ -75,13 +74,13 @@ h6 {
   transform: translate(-50%);
 }
 
-.reset-btn {
+.cta-icon {
   background: transparent;
   border: none;
   color: #d6954b;
 }
 
-.reset-btn:hover {
+.cta-icon:hover {
   color: #4a4a4a;
 }
 
@@ -103,7 +102,6 @@ h6 {
 }
 
 .grey-line {
-  /* height:10px; */
   width: 100%;
   border-bottom: 1px;
   border-bottom-style: solid;
@@ -118,7 +116,51 @@ h6 {
   display: flex;
   justify-content: space-between;
 }
-
+.current-reverse {
+  flex-direction: row-reverse;
+}
 .current-information {
   text-align: center;
+}
+
+.light-grey-line {
+  width: 100%;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #b3b3b3f4;
+}
+
+.icon-container {
+  display: flex;
+}
+.align-right {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 425px) {
+  .form-row {
+    display: block;
+  }
+  .page-width {
+    display: block;
+  }
+  .history-container {
+    display: block !important;
+  }
+  .align-right {
+    justify-content: space-between;
+  }
+  .history-icon {
+    margin-left: auto;
+  }
+  .current-reverse {
+    display: block !important;
+  }
+  .current-table {
+    margin-top: 15px;
+    width: 100%;
+  }
+  .current-table .content-des {
+    text-align: right;
+  }
 }
