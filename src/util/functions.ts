@@ -12,3 +12,22 @@ export const createErrorResponseStandard = (error: any): ErrorDto => {
     error,
   };
 };
+
+/**
+ * Generate query string for API call
+ * @param { String } cityName - city name
+ * @param { String } countryName - country name
+ * @returns { String } a query string that can be used for api calls
+ * At least one param must be present
+ */
+
+export const generateQueryString = (cityName: string, countryName: string) => {
+  if (!cityName || !countryName) {
+    // When either one is provided
+    return `?q=${cityName || countryName}`;
+  }
+  if (cityName && countryName) {
+    // When both is provided
+    return `?q=${cityName},${countryName}`;
+  }
+};
