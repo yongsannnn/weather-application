@@ -37,7 +37,6 @@ export const generateQueryString = (cityName: string, countryName: string) => {
  * @param { String } units  - Metric / Imperial units
  * @param { String } element - Element (Eg, temp or humidity)
  * @returns { String } the corresponding unit based on the selection
- * At least one param must be present
  */
 
 export const generateUnits = (units: string, element: string) => {
@@ -50,4 +49,14 @@ export const generateUnits = (units: string, element: string) => {
     }
   }
   return "";
+};
+
+/**
+ * Return URL for img src
+ * @param { String } iconId  - Icon ID from API
+ * @returns { String } the corresponding URL
+ */
+export const returnImageURL = (iconId: string) => {
+  const IMG_URL = process.env.REACT_APP_IMG_URL;
+  return `${IMG_URL}${iconId}@2x.png`;
 };

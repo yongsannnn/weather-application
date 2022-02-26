@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/appContext";
-import { generateUnits } from "../util/functions";
+import { generateUnits, returnImageURL } from "../util/functions";
 // import {
 //   Col,
 //   Dropdown,
@@ -18,6 +18,12 @@ const CurrentWeather = () => {
     if (!!Object.keys(checkCurrentData).length) {
       return (
         <React.Fragment>
+          <div>
+            <img
+              src={returnImageURL(checkCurrentData.weather[0].icon)}
+              alt="weather-icon"
+            />
+          </div>
           <div>{checkCurrentData.name}</div>
           <div>{checkCurrentData.sys.country}</div>
           <div>{checkCurrentData.weather[0].main}</div>
