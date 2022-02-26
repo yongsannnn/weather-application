@@ -61,6 +61,10 @@ export const returnImageURL = (iconId: string) => {
   return `${IMG_URL}${iconId}@2x.png`;
 };
 
+/**
+ * Generate a date string based on the time this function is called
+ * @returns { String } the corresponding timestamp in DD/MM/YY, HH:MM:SS AM/PM
+ */
 export const generateDateNow = () => {
   return new Date().toLocaleString("en-GB", { hour12: true });
 };

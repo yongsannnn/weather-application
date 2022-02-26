@@ -11,7 +11,7 @@ class WeatherService {
   private apiKey: string = process.env.REACT_APP_SECRET_KEY || "";
   private unitsQuery: string = `&units=metric`;
   /**
-   * Get Weather by city name
+   * Get Weather by city and/or country name
    * @param { String } cityName - city name
    * @param { String } countryName - country name
    * @returns { Object } Object of weather information

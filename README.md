@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Weather Today
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project aims to create an front-end application which provides user the weather details of his search.
 
-## Available Scripts
+## Access
 
-In the project directory, you can run:
+Url to site: https://gifted-johnson-e83765.netlify.app/
 
-### `npm start`
+# Deployment
 
-Runs the app in the development mode.\
+If you would like to deploy or fork this application you can visit https://github.com/yongsannnn/weather-application.
+
+There are two branches to this application. Ensure you are on the <b>master</b> branch.
+
+Apart from React default package. Ensure you have the following depencencies.
+
+```
+axios
+bootstrap
+dotenv
+```
+
+To run in developer mode please run the following.
+
+```
+npm install
+npm start
+```
+
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+## Environment File
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You will need to have an env file containing the following
 
-### `npm run build`
+```
+REACT_APP_HOST_API = /*URL for query*/
+REACT_APP_IMG_URL = /*URL to retrieve icons*/
+REACT_APP_SECRET_KEY = /*Open Weather Map Secret Key*/
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Visit [OpenWeatherMap API](https://openweathermap.org/current#name) for the latest updated API documentation and URL.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To get a secret key you must create an account.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Technologies
 
-### `npm run eject`
+In this application TSX is used to structure the content, CSS3 and Bootstrap for styling and JavaScript to process data.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+VSC is used as the main coding platform.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Several other tools that played a role in this application:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+For API,
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- [Axios](https://github.com/axios/axios)
 
-## Learn More
+For styling,
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For deployment,
 
-### Code Splitting
+- [Github](https://github.com/)
+- [Netlify](https://netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+For icons,
 
-### Analyzing the Bundle Size
+- [Flaticon](https://www.flaticon.com/)
+- [FontAwesome](https://fontawesome.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Acknowledgments & Disclaimer
 
-### Making a Progressive Web App
+- API provided by [OpenWeatherMap](https://openweathermap.org/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I do not own any rights to the images, all rights belongs to their respective creator. This is a personal project.
