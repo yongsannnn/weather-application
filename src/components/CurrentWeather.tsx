@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/appContext";
 import { generateUnits, returnImageURL } from "../util/functions";
-import { Col } from "react-bootstrap";
 
 const CurrentWeather = () => {
   const context: any = useContext(AppContext);
