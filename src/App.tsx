@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import Home from "./components/Home";
+import TopNav from "./components/TopNav";
 import Input from "./components/Input";
 import CurrentWeather from "./components/CurrentWeather";
 import PastHistory from "./components/PastHistory";
 import { AppContext } from "./context/appContext";
+import "./App.css";
 const App = () => {
   const [currentData, setCurrentData] = useState({});
   const [historyData, setHistoryData] = useState([]);
@@ -19,7 +20,7 @@ const App = () => {
   };
   return (
     <AppContext.Provider value={{ storeData: context }}>
-      <Home />
+      <TopNav />
       <Input />
       <CurrentWeather />
       <PastHistory />

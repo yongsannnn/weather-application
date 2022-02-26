@@ -1,54 +1,62 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/appContext";
 import { generateUnits, returnImageURL } from "../util/functions";
-// import {
-//   Col,
-//   Dropdown,
-//   Form,
-//   FormControl,
-//   InputGroup,
-//   Button,
-//   FormLabel,
-//   Modal,
-// } from "react-bootstrap";
 const CurrentWeather = () => {
   const context: any = useContext(AppContext);
   const { checkCurrentData } = context.storeData;
   const renderCurrentWeather = () => {
     if (!!Object.keys(checkCurrentData).length) {
       return (
-        <React.Fragment>
-          <div>
+        <div className="current-container">
+          <table key={checkCurrentData.id}>
+            <tbody>
+              <tr>
+                <td className="content-title">Description:</td>
+                <td>{checkCurrentData.weather[0].description.toUpperCase()}</td>
+              </tr>
+              <tr>
+                <td className="content-title">Temperature:</td>
+                <td>{`${
+                  checkCurrentData.main.temp_min +
+                  generateUnits("metric", "temperature")
+                } ~ ${
+                  checkCurrentData.main.temp_max +
+                  generateUnits("metric", "temperature")
+                }`}</td>
+              </tr>
+              <tr>
+                <td className="content-title">Humidity:</td>
+                <td>
+                  {checkCurrentData.main.humidity +
+                    generateUnits("metric", "humidity")}
+                </td>
+              </tr>
+              <tr>
+                <td className="content-title">Time:</td>
+                <td>{checkCurrentData.time}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="current-information">
             <img
               src={returnImageURL(checkCurrentData.weather[0].icon)}
               alt="weather-icon"
             />
+            <h2>{checkCurrentData.weather[0].main}</h2>
+            <h3 className="mt-2">{`${checkCurrentData.name}, ${checkCurrentData.sys.country}`}</h3>
           </div>
-          <div>{checkCurrentData.name}</div>
-          <div>{checkCurrentData.sys.country}</div>
-          <div>{checkCurrentData.weather[0].main}</div>
-          <div>{checkCurrentData.weather[0].description}</div>
-          <div>{`${
-            checkCurrentData.main.temp_min +
-            generateUnits("metric", "temperature")
-          } ~ ${
-            checkCurrentData.main.temp_max +
-            generateUnits("metric", "temperature")
-          }`}</div>
-          <div>
-            {checkCurrentData.main.humidity +
-              generateUnits("metric", "humidity")}
-          </div>
-          <div>{checkCurrentData.time}</div>
-        </React.Fragment>
+        </div>
       );
     }
-    return "Start by entering a city and/or country you would like to know it's weather!";
+    return <p className="content-title">No information.</p>;
   };
   return (
     <React.Fragment>
-      <div>Current Weather</div>
-      {renderCurrentWeather()}
+      <div className="page-width current-weather">
+        <h1 className="mt-2">Current Weather</h1>
+        <p className="grey-line"></p>
+        {renderCurrentWeather()}
+      </div>
     </React.Fragment>
   );
 };

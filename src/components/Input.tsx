@@ -1,14 +1,5 @@
 import React, { useState, useContext } from "react";
-import {
-  // Col,
-  // Dropdown,
-  Form,
-  // FormControl,
-  // InputGroup,
-  Button,
-  // FormLabel,
-  // Modal,
-} from "react-bootstrap";
+import { Col, Form } from "react-bootstrap";
 import WeatherService from "../services/weatherService";
 import { AppContext } from "../context/appContext";
 
@@ -24,7 +15,7 @@ const Input = () => {
   const handleSend = async () => {
     if (!cityName && !countryName) {
       setHasError(true);
-      setErrorMessage("Enter city and/or country name.");
+      setErrorMessage("Enter a city and/or country name.");
       return;
     }
     setIsLoading(true);
@@ -48,38 +39,49 @@ const Input = () => {
   };
   return (
     <React.Fragment>
-      <div>
-        <Form>
-          <Form.Group>
-            <Form.Label>City</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Please enter a city"
-              value={cityName}
-              onChange={(e) => {
-                setCityName(e.target.value);
-              }}
-            />
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>Country</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Please enter a country"
-              value={countryName}
-              onChange={(e) => {
-                setCountryName(e.target.value);
-              }}
-            />
-          </Form.Group>
-        </Form>
-        <Button disabled={isLoading} onClick={handleSend}>
-          Send
-        </Button>
-        <Button onClick={handleReset}>Reset</Button>
-      </div>
-      <div style={{ display: hasError ? "block" : "none" }}>
-        <p>{errorMessage}</p>
+      <div className="page-width">
+        <Col className="input-wrapper" sm="12">
+          <button className="reset-btn top-right" onClick={handleReset}>
+            <i className="fas fa-sync-alt"></i>
+          </button>
+          <Form className="form-row">
+            <Col sm="6">
+              <Form.Control
+                type="text"
+                placeholder="City"
+                className="input-input"
+                value={cityName}
+                onChange={(e) => {
+                  setCityName(e.target.value);
+                }}
+              />
+            </Col>
+            <Col sm="6">
+              <Form.Control
+                type="text"
+                placeholder="Country"
+                className="input-input"
+                value={countryName}
+                onChange={(e) => {
+                  setCountryName(e.target.value);
+                }}
+              />
+            </Col>
+          </Form>
+          <p
+            className="warning-text"
+            style={{ display: hasError ? "block" : "none" }}
+          >
+            {errorMessage}
+          </p>
+          <button
+            className={"cta search-btn"}
+            disabled={isLoading}
+            onClick={handleSend}
+          >
+            SEARCH
+          </button>
+        </Col>
       </div>
     </React.Fragment>
   );

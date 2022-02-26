@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Lato&display=swap");
+
+#root {
+  font-family: "Lato", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant Garamond", serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  margin-left: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: aliceblue;
 }
 
-.App-link {
-  color: #61dafb;
+.page-width {
+  display: flex;
+  margin: auto;
+  padding: 2em;
+  max-width: 1040px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-wrapper {
+  padding: 1.5em;
+  border: 1px solid #dbdbdb;
+  position: relative;
+}
+.input-input {
+  padding: 0.5em;
+  width: 100%;
+  margin-bottom: 1em;
+  letter-spacing: 3px;
+  border: 1px solid #dbdbdb;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.cta {
+  border: 1px solid #d6954b;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #777777;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  transition: 0.2s ease;
+  background: transparent;
+  height: 40px;
+}
+
+.cta:hover {
+  color: #d6954b;
+  text-decoration: none;
+}
+
+.search-btn {
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+.reset-btn {
+  background: transparent;
+  border: none;
+  color: #d6954b;
+}
+
+.reset-btn:hover {
+  color: #4a4a4a;
+}
+
+.top-right {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
+
+.warning-text {
+  color: red;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-bottom: 0 !important;
+}
+
+.current-weather {
+  display: block !important;
+}
+
+.grey-line {
+  /* height:10px; */
+  width: 100%;
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #4a4a4a;
+}
+
+.content-title {
+  color: #777777 !important;
+}
+
+.current-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-information {
+  text-align: center;
 }
