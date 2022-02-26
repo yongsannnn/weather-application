@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Home from "./components/Home";
 import Input from "./components/Input";
+import CurrentWeather from "./components/CurrentWeather";
+import PastHistory from "./components/PastHistory";
 import { AppContext } from "./context/appContext";
 const App = () => {
   const [currentData, setCurrentData] = useState({});
@@ -19,6 +21,8 @@ const App = () => {
     <AppContext.Provider value={{ storeData: context }}>
       <Home />
       <Input />
+      <CurrentWeather />
+      <PastHistory />
     </AppContext.Provider>
   );
 };

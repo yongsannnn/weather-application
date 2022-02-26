@@ -29,8 +29,10 @@ const Input = () => {
     }
     setIsLoading(true);
     setHasError(false);
-    const res = await WeatherService.getWeather(cityName, countryName);
+    let res = await WeatherService.getWeather(cityName, countryName);
     if (res.status === 200) {
+      const thisDate = new Date().toLocaleString("en-GB", { hour12: true });
+      Object.assign(res.data, { time: thisDate });
       updateCurrentData(res.data);
       updateHistoryData([...checkHistoryData, res.data]);
     } else {
