@@ -56,7 +56,6 @@ const Input = () => {
               value={cityName}
               onChange={(e) => {
                 setCityName(e.target.value);
-                console.log(e.target.value);
               }}
             />
           </Form.Group>
